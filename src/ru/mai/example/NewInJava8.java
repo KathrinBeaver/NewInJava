@@ -61,13 +61,11 @@ public class NewInJava8 {
         Set<String> set2 = new HashSet<String>();
         try {
             // in Java 8
-            Files.lines(Paths.get("test.txt"),
-                    StandardCharsets.UTF_8)
+            Files.lines(Paths.get("test.txt"), StandardCharsets.UTF_8)
                     .forEach(set1::add);
 
             // in Java 7
-            List<String> words =
-                    Files.readAllLines(Paths.get("test.txt"), StandardCharsets.UTF_8);
+            List<String> words = Files.readAllLines(Paths.get("test.txt"), StandardCharsets.UTF_8);
             for (String word : words) {
                 set2.add(word);
             }
@@ -113,12 +111,12 @@ public class NewInJava8 {
         System.out.println(optional.get());                             // "test"
         optional.ifPresent((s) -> System.out.println(s.charAt(0)));     // "t"
         optional = Optional.empty();
-        //System.out.println(optional.get());    // java.util.NoSuchElementException: No value present
+//        System.out.println(optional.get());    // java.util.NoSuchElementException: No value present
 
         /* Example 6. Streams */
         System.out.println();
         System.out.println("*** Example 6. Streams  ***");
-        List<String> names4 = Arrays.asList("Ivan", "Maria", "Anna", "Andrey", "Sergey");
+        List<String> names4 = Arrays.asList("Ivan", "Maria", "Anna", "Andrey", "Sergey", "Zorro");
 
         // Filter
         names4.stream()
@@ -146,7 +144,7 @@ public class NewInJava8 {
         boolean startsWithZ = names4
                 .stream()
                 .anyMatch((s) -> s.startsWith("Z"));
-        System.out.println(startsWithZ);      // true
+        System.out.println(startsWithZ);        // true
 
         boolean startsWithA = names4
                 .stream()
