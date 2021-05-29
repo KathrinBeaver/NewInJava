@@ -10,6 +10,7 @@ public class NewInJava11 {
 
     public static void example() {
 
+        // var
         List<Entity> entityList = new ArrayList<>();
         entityList.add(new Entity(1, "first", 111));
         var entity = entityList.get(0);

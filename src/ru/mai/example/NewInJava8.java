@@ -34,8 +34,8 @@ public class NewInJava8 {
         // in Java 7
         Collections.sort(names1, new Comparator<String>() {
             @Override
-            public int compare(String a, String b) {
-                return a.compareTo(b);
+            public int compare(String name1, String name2) {
+                return name1.compareTo(name2);
             }
         });
 
@@ -45,12 +45,12 @@ public class NewInJava8 {
 
         // in Java 8
         Collections.sort(names2,
-                (String a, String b) -> {
-                    return a.compareTo(b);
+                (String name1, String name2) -> {
+                    return name1.compareTo(name2);
                 });
-        Collections.sort(names2, (String a, String b) -> b.compareTo(a));
+        Collections.sort(names2, (String name1, String name2) -> name2.compareTo(name1));
 
-        Collections.sort(names2, (a, b) -> b.compareTo(a));
+        Collections.sort(names2, (name1, name2) -> name2.compareTo(name1));
 
         System.out.println(names2);
 
